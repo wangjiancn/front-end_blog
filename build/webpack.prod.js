@@ -1,3 +1,4 @@
+const path = require('path')
 const webpack = require('webpack')
 const common = require('./webpack.common.js')
 const merge = require('webpack-merge')
@@ -7,7 +8,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const config = merge.smart(common, {
   output: {
-    path: process.env.VUE_BLOG || path.resolve(__dirname, '../dist'),
+    path: process.env.STATIC_PATH || path.resolve(__dirname, '../dist'),
     filename: 'static/js/[name].[hash].js',
     publicPath: '/',
   },
