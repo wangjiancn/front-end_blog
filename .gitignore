@@ -214,6 +214,7 @@ __pycache__
 /node_*
 upload/*.*
 
-.vscode
 /node_modules
 package-lock.json
+/dist/*
+/.*/
