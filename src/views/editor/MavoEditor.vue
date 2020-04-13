@@ -37,7 +37,7 @@ import 'mavon-editor/dist/css/index.css'
 
 import Meta from '@/views/editor/Meta.vue'
 import { updateOrCreatePost, fetchArticle, fetchTags } from '@/api/article'
-import { uploadimage } from '@/api/upload'
+import { uploadimage, getQiniuToken } from '@/api/upload'
 import { constants } from 'crypto'
 
 const markdownIt = mavonEditor.getMarkdownIt()
@@ -136,10 +136,9 @@ export default {
       this.cat = e
     },
     async imgAdd(pos, $file) {
-      uploadimage($file).then(r => {
-        const url = r.data
-        this.$refs.md.$img2Url(pos, url)
-      })
+      const { data: token } = await getQiniuToken()
+      const { url } = await uploadimage($file, token)
+      this.$refs.md.$img2Url(pos, url)
     },
     goBack() {
       if (window.history.length > 1) {
