@@ -4,6 +4,7 @@ import 'dayjs/locale/zh-cn'
 import '@/styles/global.css'
 import Vue from 'vue'
 import VueMeta from 'vue-meta'
+import VueAnalytics from 'vue-analytics'
 import VueRouter from 'vue-router'
 import Vuex from 'vuex'
 import App from './App.vue'
@@ -70,6 +71,14 @@ Vue.prototype.$message = Message
 Vue.use(Vuex)
 Vue.use(VueRouter)
 Vue.use(VueMeta)
+Vue.use(VueAnalytics, {
+  id: 'UA-163385428-1',
+  router,
+  debug: {
+    enabled: process.env.NODE_ENV !== 'production',
+    sendHitTask: process.env.NODE_ENV === 'production',
+  },
+})
 
 dayjs.extend(relativeTime)
 
