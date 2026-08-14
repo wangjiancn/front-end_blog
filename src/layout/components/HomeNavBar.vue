@@ -61,7 +61,6 @@
 
 <script>
 import Login from '@/views/access/Login.vue'
-import { constants } from 'crypto'
 export default {
   components: { Login },
   data() {
@@ -171,4 +170,3 @@ export default {
   }
 }
 </style>
-

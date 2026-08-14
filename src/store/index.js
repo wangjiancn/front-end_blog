@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import dayjs from 'dayjs'
 import { MessageBox } from 'element-ui'
-import { get } from 'https'
 
 Vue.use(Vuex)
 

@@ -90,8 +90,6 @@
 </template>
 <script>
 import { fetchArticle } from '@/api/article.js'
-import { nextTick } from 'q'
-import { constants } from 'crypto'
 export default {
   data() {
     return {

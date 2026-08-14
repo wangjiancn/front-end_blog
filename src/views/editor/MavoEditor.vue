@@ -38,7 +38,6 @@ import 'mavon-editor/dist/css/index.css'
 import Meta from '@/views/editor/Meta.vue'
 import { updateOrCreatePost, fetchArticle, fetchTags } from '@/api/article'
 import { uploadimage, getQiniuToken } from '@/api/upload'
-import { constants } from 'crypto'
 
 const markdownIt = mavonEditor.getMarkdownIt()
 markdownIt.renderer.rules.heading_open = function(tokens, idx) {

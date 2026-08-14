@@ -2,7 +2,6 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin') // 清理目录
 
 module.exports = {
   entry: {
@@ -84,6 +83,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
+              esModule: false,
               name: '[name]-[hash:5].min.[ext]',
               limit: 10000,
               publicPath: '/static/imgs/',
